@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SPAv1</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="../img/logo/emule4.png" alt="">
+            </div>
+            <div class="menu">
+
+                <button onclick="mostrarHome()">Home</button>
+                <button onclick="mostrarProdutos()">Produtos</button>
+                <button onclick="mostrarServicos()">Serviços</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="home">
+            <h1>Uma SPA bem simplinha</h1>
+            <h2>O que é uma SPA?</h2>
+            <p>
+                SPA Significa Single Page Application e nada mais é do que uma aplicação web que roda em uma página html
+                apenas, se assemelhando ao funcionamento dos aplicativos desktop.
+            </p>
+            <h2>Como isso acontece neste exemplo?</h2>
+            <p>
+                Neste exemplo temos 3 "páginas": Home, Produtos e Serviços.
+            </p>
+            <p>
+                Cada uma delas é na verdade uma div e apenas uma é mostrada a cada momento. Quando clicamos em um botão
+                para mostrar uma página, ela é mostrada com display:'flex'. As demais são escondidas com display: 'none'. 
+            </p>
+            <p>
+                Todo o conteúdo já está escrito no HTML e a principal mágica está dentro das funções no
+                script.js. Olha lá!
+            </p>
+            <p>
+                O visual besta desta página foi criado para evidenciar de forma simples o comportamento das divs que
+                fazem cossplay de página. Eu sei que tá feio mas é por um motivo nobre: pra manter o foco no que realmente interessa aqui.
+            </p>
+        </div>
+        <div id="produtos">
+            <div class="card">
+                <img src="../img/produtos/bolo-aniversário_200_transparent.gif" alt="">
+                <h2>Bolo de aniversário</h2>
+                <p>Um delicioso bolo de aniversário com surpresa dentro.</p>
+                <p>Preço: R$250,00</p>
+            </div>
+            <div class="card">
+                <img src="../img/produtos/milk-shake_200_transparent.gif" alt="">
+                <h2>Milk Shake Diferente</h2>
+                <p>Um delicioso Milk Shake diferente dos convencionais.</p>
+                <p>Preço: R$25,00</p>
+            </div>
+            <div class="card">
+                <img src="../img/produtos/pilha-alcalina_200_transparent.gif" alt="">
+                <h2>Pilha Alcalina</h2>
+                <p>Uma delicisa pilha alcalina para te dar energia.</p>
+                <p>Preço: R$9,90</p>
+            </div>
+            <div class="card">
+                <img src="../img/produtos/relogio_200_transparent.gif" alt="">
+                <h2>Despertador</h2>
+                <p>Um delicioso despertador barulhento.</p>
+                <p>Preço: R$50,00</p>
+            </div>
+        </div>
+
+        <div id="servicos">
+            <div class="card">
+                <img src="../img/servicos/aula-de-basquete_200_transparent.gif" alt="">
+                <h2>Aula de basquete</h2>
+                <p>Aprenda a jogar basquete.</p>
+                <p>Preço: R$50,00</p>
+            </div>
+            <div class="card">
+                <img src="../img/servicos/carona-de-aviao_200_transparent.gif" alt="">
+                <h2>Passeio de avião</h2>
+                <p>Chegue lá rapidão.</p>
+                <p>Preço: R$2500,00</p>
+            </div>
+            <div class="card">
+                <img src="../img/servicos/detetive_200_transparent.gif" alt="">
+                <h2>Detetive particular</h2>
+                <p>Tem desconfianças? Seus problemas acabaram...</p>
+                <p>Preço: R$300,00</p>
+            </div>
+            <div class="card">
+                <img src="../img/servicos/jantar-romantico_200_transparent.gif" alt="">
+                <h2>Jantar romântico</h2>
+                <p>Um delicioso jantar completo em um lugar lindo.</p>
+                <p>Preço: R$500,00</p>
+            </div>
+            <div class="card">
+                <img src="../img/servicos/passear-gatinho_200_transparent.gif" alt="">
+                <h2>Passear gatinho</h2>
+                <p>Tá sem tempo de cuidar dele? Chama a gente!</p>
+                <p>Preço: R$99,90</p>
+            </div>
+            <div class="card">
+                <img src="../img/servicos/personal_200_transparent.gif" alt="">
+                <h2>Personal trainer</h2>
+                <p>Precisando de alguém pra incentivar?</p>
+                <p>Preço: R$50,00</p>
+            </div>
+        </div>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

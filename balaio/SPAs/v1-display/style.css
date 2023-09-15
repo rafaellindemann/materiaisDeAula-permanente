@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: aquamarine;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#home{
+    background-color: rgb(34, 175, 128);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#produtos{
+    background-color: rgb(12, 163, 163);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#servicos{
+    background-color: rgb(0, 191, 255);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card{
+    background-color: rgb(45, 180, 180);
+    margin: 10px;
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 20%;
+}
+.card:hover{
+    scale: 1.03;
+    border: 2px solid aqua;
+    box-shadow: 0 0 10px aqua;
+}
+
+nav{
+    /* height: 50px; */
+    background-color: rgb(22, 153, 109);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 15px;
+    padding-bottom: 5px;
+}
+
+.logo{
+    flex: 0 0 auto;
+}
+
+.menu{
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    background-color: rgb(17, 202, 141);
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: none;
+    margin: 0 10px;
+}
+
+button:hover{
+    border: 1px solid aqua;
+    box-shadow: 0 0 10px aqua;
+}
+
+p{
+    margin-top: 5px;
+}
+
+h1, h2{
+    margin: 25px;
+    align-self: center;
+}
+

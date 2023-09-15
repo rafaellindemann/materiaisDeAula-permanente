@@ -1,0 +1,43 @@
+*{
+    border: 1px solid red;
+    color: #660606;
+}
+
+
+#container{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.painel{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 45%;
+    height: 600px;
+    background-color: #ff9c9c;
+}
+
+#divInputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    background-color: #cdc4c4;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#divTrabalho{
+    margin: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}

@@ -1,0 +1,21 @@
+/* *{
+    margin: 0px;
+    padding: 0px;
+} */
+
+dialog{
+    border-radius: 10px;
+    padding: 3px;
+}
+
+dialog::backdrop{
+    background-color: rgba(126, 70, 112, 0.6);
+}
+
+#container, #login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+

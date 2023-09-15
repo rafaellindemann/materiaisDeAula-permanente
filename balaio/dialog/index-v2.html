@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style-v2.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <dialog id="modal"> 
+        <h2 class="tituloDoModal">Título do modal</h2>
+        <div class="textoDoModal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto nihil animi accusantium veniam unde numquam nam dicta esse incidunt voluptatum, nostrum, quibusdam necessitatibus voluptatem, vel eligendi nisi totam iure qui.</div>
+        <div class="botoesDoModal">
+            <button onclick="modal.close()">X</button>
+        </div>
+    </dialog>
+
+    <button onclick="modal.showModal()">Mostrar</button>
+</body>
+</html>

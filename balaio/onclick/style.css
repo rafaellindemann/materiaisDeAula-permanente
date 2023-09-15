@@ -1,0 +1,20 @@
+*{
+    border: 1px dotted red;
+    margin: 10px;
+    max-width: 200px;
+}
+
+body{
+    background-color: rgb(50,50,50);
+}
+#container{
+    background-color: aquamarine;
+}
+
+div div{
+    background-color: yellowgreen;
+}
+
+div div div{
+    background-color: yellow;
+}

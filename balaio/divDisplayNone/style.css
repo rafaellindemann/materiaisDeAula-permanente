@@ -1,0 +1,18 @@
+*{
+    border: 1px solid red;
+}
+
+
+#divEditar{
+    display: none;
+    background-color: aqua;
+    /* width: 50%; */
+    height: 400px;
+}
+
+#divCadastrar{
+    display: block;
+    background-color: blueviolet;
+    /* width: 50%; */
+    height: 400px;
+}

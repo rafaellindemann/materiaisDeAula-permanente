@@ -1,0 +1,1 @@
+Aqui estão coisas diversas, criadas para testar ou mostrar algo bem específico.

@@ -1,0 +1,44 @@
+
+
+#container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.painel{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 49%;
+    height: 400px;
+    border-radius: 10px;
+}
+
+#divInputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#divBotoes{
+    margin-top: 10px;
+}
+
+#divTrabalho{
+    display: none;
+}
+
+#divEsquerda{
+    background-color: #0000ff;
+}
+#divDireita{
+    background-color: #ff0000;
+}
+
+input, button{
+    border-radius: 5px;
+}

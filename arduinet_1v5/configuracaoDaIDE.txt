@@ -1,0 +1,15 @@
+1- Acrescentar servidor de placas para a IDE do arduino encontrar a ESP8266
+Arquivo>preferências>URLs Adicionais para Gerenciadores de Placas:
+http://arduino.esp8266.com/stable/package_esp8266com_index.json
+
+2- Instalar a placa do ESP8266
+Ferramentas>Placas>Gerenciador de Placas
+Procurar por ESP8266 e instalar a biblioteca de placas 'esp8266' by ESP8266 Community
+
+3- Instalar as bibliotecas
+Sketch>Incluir Biblioteca>Adicionar biblioteca .ZIP
+Escolher o arquivo 'ESPAsyncTCP-master' disponível na biblioteca do AVA
+Repetir o processo para o arquivo 'ESPAsyncWebServer-master'
+
+4- Selecionar o ESP8266
+Ferramentas>Placa>ESP8266 Boards (x.x.x)>NodeMCU 1.0 (ESP-12E Module)
