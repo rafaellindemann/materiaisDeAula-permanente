@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dialog</title>
+</head>
+<body>
+    <button id="openModalBtn">Cadastrar</button>
+
+    <dialog id="registerModal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Cadastro</h2>
+        <form>
+        <label for="username">Usuário:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+    </dialog>
+    <script src="script.js"></script>
+</body>
+</html>
