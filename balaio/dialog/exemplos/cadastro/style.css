@@ -1,0 +1,53 @@
+/* Estilo para o botão de fechar */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+  /* Estilo para o modal */
+  #registerModal {
+    width: 300px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+  }
+  
+  /* Estilo para o conteúdo do modal */
+  .modal-content {
+    position: relative;
+  }
+  
+  /* Estilo para o cabeçalho do modal */
+  .modal-content h2 {
+    margin-top: 0;
+  }
+  
+  /* Estilo para os campos do formulário */
+  .modal-content input[type="text"],
+  .modal-content input[type="email"],
+  .modal-content input[type="password"],
+  .modal-content button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  /* Estilo para o botão de submit */
+  .modal-content button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Estilo para o botão de submit quando hover */
+  .modal-content button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
