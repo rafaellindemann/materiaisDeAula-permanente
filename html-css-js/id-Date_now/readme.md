@@ -1,0 +1,1 @@
+Aqui você vai encontrar dicas sobre como usar o Date.now pra gerar IDs para seus objetos.
