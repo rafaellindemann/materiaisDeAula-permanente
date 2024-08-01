@@ -35,7 +35,7 @@ function cadastrar3(){
 
 function verPessoas(){  
     console.log(pessoas);
-    alert('Verifique o console')
+    alert('Verifique o console o ID dos objetos que estão no array')
 }
 
 
