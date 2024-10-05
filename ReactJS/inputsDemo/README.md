@@ -27,4 +27,3 @@ Além das cobertas no exemplo, talvez possam ser relevantes também:
    <input type="search" name="pesquisa" value={dinossauro.pesquisa} onChange={handleInputChange} />
    ```
 
-!
