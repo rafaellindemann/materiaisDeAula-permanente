@@ -1,0 +1,78 @@
+/* Melhorar a estilização dos cards */
+/* Criar a visualização ao vivo dos valores dos inputs */
+
+:root {
+  --background-color: #e9f5db;
+  --primary-color: #2d6a4f;
+  --secondary-color: #52796f;
+  /* --highlight-color: #ffddd2; */
+  --highlight-color: #ffffd2;
+  --button-color: #40916c;
+  --text-color: #081c15;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.app {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--highlight-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid var(--secondary-color);
+}
+
+input[type="checkbox"], input[type="radio"] {
+  width: auto;
+}
+
+button {
+  background-color: var(--button-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--primary-color);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: var(--primary-color);
+  color: white;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 4px;
+}
