@@ -1,0 +1,26 @@
+/* Estado inicial quando o componente entra */
+.faq-enter {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  
+  /* Estado durante a transição de entrada */
+  .faq-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 500ms, transform 500ms;
+  }
+  
+  /* Estado inicial quando o componente sai */
+  .faq-exit {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Estado durante a transição de saída */
+  .faq-exit-active {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 500ms, transform 500ms;
+  }
+  
