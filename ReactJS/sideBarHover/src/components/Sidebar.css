@@ -1,0 +1,45 @@
+/* Container do menu */
+.sidebar-container {
+    position: relative;
+  }
+  
+  /* Ícone de hambúrguer */
+  .hamburger-icon {
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+  }
+  
+  /* Estilização do menu sidebar */
+  .sidebar-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 200px;
+    background-color: #333;
+    color: white;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+    z-index: 1000;
+  }
+  
+  /* Lista de itens do menu */
+  .sidebar-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 50px;
+  }
+  
+  .sidebar-menu li {
+    padding: 15px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #444;
+  }
+  
+  .sidebar-menu li:hover {
+    background-color: #555;
+  }
+  
