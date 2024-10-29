@@ -1,0 +1,59 @@
+/* Estilos gerais para todos os dispositivos */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    border-radius: 10px;
+    color: #333;
+    font-size: 1.2em;
+}
+#legenda{
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+/* Celulares pequenos (até 400px) */
+@media (max-width: 400px) {
+    .container {
+        background-color: lightblue;
+    }
+}
+
+/* Celulares grandes (401px até 600px) */
+@media (min-width: 401px) and (max-width: 600px) {
+    .container {
+        background-color: lightgreen;
+    }
+}
+
+/* Tablets (601px até 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+    .container {
+        background-color: lightpink;
+    }
+}
+
+/* Desktops pequenos (901px até 1200px) */
+@media (min-width: 901px) and (max-width: 1200px) {
+    .container {
+        background-color: lightgoldenrodyellow;
+    }
+}
+
+/* Desktops grandes (acima de 1200px) */
+@media (min-width: 1201px) {
+    .container {
+        background-color: lightgray;
+    }
+}
