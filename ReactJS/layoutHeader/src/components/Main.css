@@ -1,0 +1,8 @@
+.main {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    background-image: url('layered-peaks-haikei.svg');
+    /* background-image: url('wave-haikei.svg'); */
+  }

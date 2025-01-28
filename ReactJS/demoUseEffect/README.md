@@ -1,0 +1,1 @@
+BUGado em CORS

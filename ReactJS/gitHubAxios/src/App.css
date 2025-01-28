@@ -1,0 +1,72 @@
+/* App.css */
+:root {
+  --background-color: #1e1e1e;
+  --text-color: #ffa500;
+  --error-color: #ff4d4d;
+  --input-background: #333;
+  --button-background: #ffa500;
+  --button-text: #8e5e5e;
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.app {
+  text-align: center;
+}
+
+input {
+  padding: 10px;
+  margin: 10px;
+  background-color: var(--input-background);
+  border: none;
+  color: var(--text-color);
+  font-size: 16px;
+  width: 250px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: var(--button-background);
+  color: var(--button-text);
+  color: var(--text-color);
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.user-card {
+  background-color: #333;
+  padding: 20px;
+  /* margin-top: 20px; */
+  margin: 20px;
+  border-radius: 10px;
+  text-align: left;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+  box-shadow: 0 0 10px rgba(099, 099, 099, 0.5);
+}
+
+.user-card img {
+  width: 150px;
+  border-radius: 50%;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+  /* box-shadow: 0 0 10px rgba(229, 229, 229, 0.5); */
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+}
+
+.error {
+  color: var(--error-color);
+  font-size: 18px;
+}

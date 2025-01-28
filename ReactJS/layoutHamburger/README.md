@@ -1,0 +1,1 @@
+Esta página mostra um teste de navbar responsiva, que vira menu hamburguer retraído em tela menor que 425px de largura.

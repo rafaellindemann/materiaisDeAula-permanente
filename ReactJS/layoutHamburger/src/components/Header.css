@@ -1,0 +1,68 @@
+.header {
+    color: white;
+    padding: 10px;
+    text-align: center;
+    max-height: 60px;
+    background: hsla(52, 82%, 52%, 1);
+    background: linear-gradient(180deg, hsla(52, 82%, 52%, 1) 0%, hsla(1, 92%, 47%, 1) 100%);
+    background: -moz-linear-gradient(180deg, hsla(52, 82%, 52%, 1) 0%, hsla(1, 92%, 47%, 1) 100%);
+    background: -webkit-linear-gradient(180deg, hsla(52, 82%, 52%, 1) 0%, hsla(1, 92%, 47%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#E9D022", endColorstr="#E60B09", GradientType=1);
+    position: relative;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+}
+
+.lista {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.itens-nav-link {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.itens-nav-link:hover {
+    color: #f1f100;
+}
+
+/* @media (max-width: 768px) { */
+@media (max-width: 425px) {
+    .hamburger {
+        display: block;
+    }
+    
+    .lista {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: hsla(52, 82%, 52%, 1);
+        background: linear-gradient(180deg, hsla(52, 82%, 52%, 1) 0%, hsla(1, 92%, 47%, 1) 100%);
+        background: -moz-linear-gradient(180deg, hsla(52, 82%, 52%, 1) 0%, hsla(1, 92%, 47%, 1) 100%);
+        background: -webkit-linear-gradient(180deg, hsla(52, 82%, 52%, 1) 0%, hsla(1, 92%, 47%, 1) 100%);
+        z-index: 1;
+    }
+    
+    .lista.open {
+        display: flex;
+    }
+}
