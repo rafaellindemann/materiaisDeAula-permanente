@@ -1,0 +1,23 @@
+/* Estilos gerais (para todos os dispositivos) */
+body {
+    font-size: 16px;
+    color: black;
+    background-color: lightgray;
+}
+
+/* Estilos específicos para telas de até 600px de largura (celulares) */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px; /* Texto menor em telas pequenas */
+        color: blue;
+    }
+}
+
+/* Estilos específicos para telas acima de 600px de largura (desktops) */
+@media (min-width: 601px) {
+    body {
+        /* font-size: 18px; */
+        font-size: 28px; /* Texto maior em desktops */
+        color: black;
+    }
+}
