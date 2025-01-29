@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-image-repeat: stretch !important;
+}
+
+body {
+    padding: 20px;
+    font-family: 'Press Start 2P', cursive;
+}
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* .nes-btn {
+    border-image-repeat: stretch !important;
+    margin: 10px;
+} */
+section{
+    margin: 20px;
+}

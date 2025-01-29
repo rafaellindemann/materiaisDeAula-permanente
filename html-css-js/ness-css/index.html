@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto com NES.css</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="nes-text is-primary">Bem-vindo ao Mundo Nintendo!</h1>
+
+        <section class="nes-container with-title">
+            <h2 class="title">Botões</h2>
+            <button type="button" class="nes-btn is-primary">Primário</button>
+            <button type="button" class="nes-btn is-success">Sucesso</button>
+            <button type="button" class="nes-btn is-warning">Aviso</button>
+            <button type="button" class="nes-btn is-error">Erro</button>
+            <button type="button" class="nes-btn is-disabled">Desativado</button>
+        </section>
+
+        <section class="nes-container with-title">
+            <h2 class="title">Caixas de Diálogo</h2>
+            <div class="nes-balloon from-left">
+                <p>Olá! Eu sou um balão de fala.</p>
+            </div>
+            <div class="nes-balloon from-right">
+                <p>E eu sou outro balão de fala!</p>
+            </div>
+        </section>
+
+        <section class="nes-container with-title">
+            <h2 class="title">Ícones</h2>
+            <i class="nes-icon coin is-large"></i>
+            <i class="nes-icon star is-large"></i>
+            <i class="nes-icon heart is-large"></i>
+        </section>
+
+        <section class="nes-container with-title">
+            <h2 class="title">Formulários</h2>
+            <form>
+                <div class="nes-field">
+                    <label for="name_field">Seu nome:</label>
+                    <input type="text" id="name_field" class="nes-input">
+                </div>
+                <div class="nes-field">
+                    <label for="password_field">Sua senha:</label>
+                    <input type="password" id="password_field" class="nes-input">
+                </div>
+                <div class="nes-field">
+                    <label>
+                        <input type="radio" class="nes-radio" name="answer" checked />
+                        <span>Opção 1</span>
+                    </label>
+                    <label>
+                        <input type="radio" class="nes-radio" name="answer" />
+                        <span>Opção 2</span>
+                    </label>
+                </div>
+                <div class="nes-field">
+                    <label>
+                        <input type="checkbox" class="nes-checkbox" />
+                        <span>Concordo com os termos</span>
+                    </label>
+                </div>
+                <button type="submit" class="nes-btn is-primary">Enviar</button>
+            </form>
+        </section>
+
+        <section class="nes-container with-title">
+            <h2 class="title">Cartões</h2>
+            <div class="nes-container is-rounded">
+                <p>Este é um cartão com bordas arredondadas.</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
