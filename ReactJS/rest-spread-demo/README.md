@@ -1,8 +1,5 @@
-# React + Vite
+# Demonstração dos operadores rest e spread em ação em um componente React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Veja o código, leia as instruções na página, execute, inspecione...
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Mais infos sobre o assunto no doc https://rafaellindemann.notion.site/Rest-e-spread-193d393ff68e80b4bc75e75d6701a89c
