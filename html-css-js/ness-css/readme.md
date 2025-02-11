@@ -10,6 +10,6 @@ https://github.com/nostalgic-css/NES.css
 
 ## Este demo online
 Para ver um pouquinho de interatividade e coisas se movendo, pode espiar aqui:
-[Link do deploy na Vercel](https://github.com/rafaellindemann/materiaisDeAula-permanente.git)
+[Link do deploy na Vercel](https://demo-ness-css.vercel.app/)
 
 ![Alt text](image.png)
