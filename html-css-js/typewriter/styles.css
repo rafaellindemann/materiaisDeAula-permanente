@@ -1,0 +1,14 @@
+body{
+    background-color: darkslategray;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+}
+
+#text{
+    border-right: solid 4px white;
+}
