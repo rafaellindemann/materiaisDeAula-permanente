@@ -1,5 +1,6 @@
 # Teste com Tailwind 4
 
+Este é um demo que percorre o procedimento necessário para começar um projeto React usando Tailwind na versão 4.
 
 
 Estes passsos para a instalação/preparação estão lá no site do tailwind:
