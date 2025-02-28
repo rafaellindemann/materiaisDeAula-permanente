@@ -1,10 +1,13 @@
+p{
+  margin: 33px;
+}
 nav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 60px; /* ou conforme necessário */
-  background-color: #333; /* Cor de fundo da navbar */
+  background-color: #ff00ff; /* Cor de fundo da navbar */
   color: white;
   display: flex;
   align-items: center;
