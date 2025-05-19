@@ -1,0 +1,26 @@
+.card {
+  padding: 1rem;
+  background-color: #ecf0f1;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.card p {
+  margin: 0;
+  color: #555;
+}
+
+.card button {
+  background-color: #c0392b;
+}
+
+.card button:hover {
+  background-color: #e74c3c;
+}
