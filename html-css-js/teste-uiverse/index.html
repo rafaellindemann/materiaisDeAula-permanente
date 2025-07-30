@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD de Clientes - Uiverse Demo</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1 class="titulo-uiverse">📋 Clientes</h1>
+
+    <button class="uiverse-button" id="btnAdicionar">
+      <span class="text">➕ Adicionar Cliente</span>
+    </button>
+
+    <div class="uiverse-table-container">
+      <table class="uiverse-table" id="tabelaClientes">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>CPF</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Clientes inseridos aqui dinamicamente -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="modalCliente">
+    <div class="modal-content">
+      <span class="close" id="fecharModal">&times;</span>
+      <h2 id="tituloModal">Novo Cliente</h2>
+      <form id="formCliente">
+        <input type="hidden" id="indiceEdicao">
+
+        <div class="uiverse-input-group">
+          <input required="" type="text" id="nome" class="uiverse-input" autocomplete="off" placeholder=" ">
+          <label>Nome</label>
+        </div>
+
+        <div class="uiverse-input-group">
+          <input required="" type="email" id="email" class="uiverse-input" autocomplete="off" placeholder=" ">
+          <label>Email</label>
+        </div>
+
+        <div class="uiverse-input-group">
+          <input required="" type="text" id="telefone" class="uiverse-input" autocomplete="off" placeholder=" ">
+          <label>Telefone</label>
+        </div>
+
+        <div class="uiverse-input-group">
+          <input required="" type="text" id="cpf" class="uiverse-input" autocomplete="off" placeholder=" ">
+          <label>CPF</label>
+        </div>
+
+        <button class="uiverse-button uiverse-save" type="submit">
+          <span class="text">💾 Salvar</span>
+        </button>
+        <!-- From Uiverse.io by cssbuttons-io --> 
+        
+        <!-- <button>
+          <span class="text">Button</span>
+        </button> -->
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
