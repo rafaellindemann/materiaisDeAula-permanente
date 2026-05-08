@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tiger Codes</title>
+
+  <style>
+    #menu {
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+      list-style: none;
+      padding: 0;
+      margin-top: 12px;
+    }
+
+    #menu.active {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <button id="btn">☰</button>
+
+    <ul id="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Sobre</a></li>
+      <li><a href="#">Cursos</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    const btn = document.querySelector("#btn");
+    const menu = document.querySelector("#menu");
+
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>
