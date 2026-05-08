@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tiger Codes</title>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #1e1f29;
+      color: white;
+      padding: 30px;
+    }
+
+    nav {
+      margin-bottom: 30px;
+    }
+
+    #btn {
+      padding: 10px 16px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      background: #ff9800;
+      color: white;
+    }
+
+    #menu {
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+      list-style: none;
+      padding: 15px;
+      margin-top: 12px;
+      background: #2b2d3a;
+      border-radius: 10px;
+      width: 200px;
+    }
+
+    #menu.active {
+      display: flex;
+    }
+
+    #menu a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .explicacao {
+      background: #2b2d3a;
+      padding: 20px;
+      border-radius: 12px;
+      line-height: 1.6;
+      max-width: 700px;
+    }
+
+    .explicacao h2 {
+      color: #ff9800;
+      margin-bottom: 10px;
+    }
+
+    .codigo {
+      background: #16171f;
+      padding: 3px 6px;
+      border-radius: 6px;
+      color: #7dffb3;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <button id="btn">☰</button>
+
+    <ul id="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Sobre</a></li>
+      <li><a href="#">Cursos</a></li>
+    </ul>
+  </nav>
+
+  <div class="explicacao">
+    <h2>Como esse menu funciona?</h2>
+
+    <p>
+      Esse exemplo cria um menu escondido que aparece quando o botão é clicado.
+    </p>
+
+    <p>
+      O JavaScript usa o método
+      <span class="codigo">addEventListener()</span>
+      para escutar o clique do botão.
+    </p>
+
+    <p>
+      Quando o usuário clica, o código executa:
+      <span class="codigo">menu.classList.toggle("active")</span>
+    </p>
+
+    <p>
+      O método
+      <span class="codigo">toggle()</span>
+      adiciona ou remove a classe
+      <span class="codigo">active</span>.
+    </p>
+
+    <p>
+      No CSS, o menu começa com:
+      <span class="codigo">display: none</span>,
+      então ele fica escondido.
+    </p>
+
+    <p>
+      Quando a classe
+      <span class="codigo">active</span>
+      é adicionada, o CSS muda para:
+      <span class="codigo">display: flex</span>,
+      fazendo o menu aparecer na tela.
+    </p>
+  </div>
+
+  <script>
+    const btn = document.querySelector("#btn");
+    const menu = document.querySelector("#menu");
+
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+
+</body>
+</html>
