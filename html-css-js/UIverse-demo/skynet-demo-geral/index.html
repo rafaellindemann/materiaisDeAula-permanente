@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo de Componentes estilo Uiverse</title>
+  <style>
+    /*
+      Demo educativa inspirada em padrões visuais populares do Uiverse.
+      Tudo está em um único arquivo para facilitar copiar, colar e testar.
+      Em projeto real, o ideal é separar por componentes/categorias.
+    */
+
+    :root {
+      --bg: #09090f;
+      --bg-soft: #11111c;
+      --card: rgba(255, 255, 255, 0.07);
+      --card-strong: rgba(255, 255, 255, 0.12);
+      --text: #f7f7fb;
+      --muted: #a7a7b8;
+      --line: rgba(255, 255, 255, 0.14);
+      --accent: #8b5cf6;
+      --accent-2: #06b6d4;
+      --accent-3: #f97316;
+      --danger: #fb7185;
+      --ok: #22c55e;
+      --radius: 22px;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(139, 92, 246, 0.35), transparent 32rem),
+        radial-gradient(circle at top right, rgba(6, 182, 212, 0.24), transparent 28rem),
+        radial-gradient(circle at bottom, rgba(249, 115, 22, 0.18), transparent 28rem),
+        var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      border: 0;
+    }
+
+    .page-shell {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 80px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 64px clamp(22px, 5vw, 64px);
+      border: 1px solid var(--line);
+      border-radius: 36px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04)),
+        rgba(255, 255, 255, 0.04);
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(6px);
+      z-index: -1;
+    }
+
+    .hero::before {
+      width: 260px;
+      height: 260px;
+      right: -80px;
+      top: -80px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      opacity: 0.42;
+      animation: floatOrb 7s ease-in-out infinite alternate;
+    }
+
+    .hero::after {
+      width: 180px;
+      height: 180px;
+      left: -40px;
+      bottom: -60px;
+      background: linear-gradient(135deg, var(--accent-3), var(--danger));
+      opacity: 0.28;
+      animation: floatOrb 8s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes floatOrb {
+      from { transform: translate3d(0, 0, 0) scale(1); }
+      to { transform: translate3d(-24px, 24px, 0) scale(1.08); }
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      color: #d8d8ff;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(18px);
+      font-size: 0.9rem;
+    }
+
+    .pulse-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--ok);
+      box-shadow: 0 0 0 rgba(34, 197, 94, 0.7);
+      animation: pulse 1.4s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+      80% { box-shadow: 0 0 0 12px rgba(34, 197, 94, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    }
+
+    .hero h1 {
+      max-width: 850px;
+      font-size: clamp(2.4rem, 7vw, 5.6rem);
+      line-height: 0.95;
+      letter-spacing: -0.08em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #fff, #c4b5fd, #67e8f9, #fed7aa);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 1.12rem;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .nav-pills {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 28px 0 54px;
+    }
+
+    .nav-pills a {
+      text-decoration: none;
+      color: var(--muted);
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      transition: 0.25s;
+    }
+
+    .nav-pills a:hover {
+      color: white;
+      border-color: rgba(255, 255, 255, 0.35);
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .section {
+      margin-top: 48px;
+      padding: clamp(20px, 4vw, 34px);
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      background: rgba(255, 255, 255, 0.045);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-end;
+      margin-bottom: 24px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      letter-spacing: -0.04em;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      margin-top: 8px;
+      line-height: 1.6;
+      max-width: 680px;
+    }
+
+    .tag {
+      flex: 0 0 auto;
+      color: #c4b5fd;
+      border: 1px solid rgba(196, 181, 253, 0.35);
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(139, 92, 246, 0.12);
+      font-size: 0.86rem;
+    }
+
+    .component-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+
+    .component-box {
+      min-height: 190px;
+      display: grid;
+      place-items: center;
+      padding: 28px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.025));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .component-box::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 16px;
+      top: 14px;
+      color: rgba(255, 255, 255, 0.38);
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .dark-stage {
+      background: #050507;
+    }
+
+    .light-stage {
+      background: #f8fafc;
+      color: #101018;
+    }
+
+    /* Botões */
+    .btn-glow {
+      position: relative;
+      padding: 15px 24px;
+      border-radius: 999px;
+      color: white;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      box-shadow: 0 0 28px rgba(139, 92, 246, 0.45);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-glow:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 0 48px rgba(6, 182, 212, 0.55);
+    }
+
+    .btn-border-slide {
+      position: relative;
+      padding: 14px 24px;
+      color: white;
+      background: transparent;
+      border: 2px solid #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      z-index: 1;
+      transition: color 0.25s;
+    }
+
+    .btn-border-slide::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: white;
+      transform: translateX(-105%);
+      transition: transform 0.25s;
+      z-index: -1;
+    }
+
+    .btn-border-slide:hover {
+      color: #111;
+    }
+
+    .btn-border-slide:hover::before {
+      transform: translateX(0);
+    }
+
+    .btn-3d {
+      padding: 14px 24px;
+      border-radius: 16px;
+      color: #351200;
+      font-weight: 900;
+      background: #f59e0b;
+      box-shadow: 0 8px 0 #92400e, 0 18px 28px rgba(0, 0, 0, 0.28);
+      transition: 0.1s;
+    }
+
+    .btn-3d:active {
+      transform: translateY(7px);
+      box-shadow: 0 1px 0 #92400e, 0 8px 18px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-neon {
+      padding: 14px 24px;
+      border-radius: 12px;
+      background: #09090f;
+      color: #67e8f9;
+      border: 1px solid #67e8f9;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      box-shadow: inset 0 0 12px rgba(103, 232, 249, 0.25), 0 0 20px rgba(103, 232, 249, 0.25);
+      transition: 0.2s;
+    }
+
+    .btn-neon:hover {
+      background: #67e8f9;
+      color: #071013;
+      box-shadow: 0 0 35px rgba(103, 232, 249, 0.85);
+    }
+
+    .btn-liquid {
+      position: relative;
+      padding: 15px 28px;
+      border-radius: 999px;
+      color: white;
+      background: #10101a;
+      overflow: hidden;
+      font-weight: 800;
+      isolation: isolate;
+    }
+
+    .btn-liquid::before {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      left: 50%;
+      top: 100%;
+      transform: translateX(-50%);
+      border-radius: 42%;
+      background: linear-gradient(90deg, #8b5cf6, #06b6d4);
+      animation: liquidSpin 5s linear infinite;
+      transition: top 0.45s;
+      z-index: -1;
+    }
+
+    .btn-liquid:hover::before {
+      top: -55px;
+    }
+
+    @keyframes liquidSpin {
+      to { transform: translateX(-50%) rotate(360deg); }
+    }
+
+    .btn-icon {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      color: white;
+      background: linear-gradient(135deg, #1f2937, #111827);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      transition: 0.25s;
+    }
+
+    .btn-icon:hover {
+      transform: rotate(-8deg) scale(1.08);
+      background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    }
+
+    /* Inputs */
+    .input-floating {
+      position: relative;
+      width: min(100%, 260px);
+    }
+
+    .input-floating input {
+      width: 100%;
+      padding: 18px 14px 10px;
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.06);
+      outline: none;
+    }
+
+    .input-floating label {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      color: var(--muted);
+      pointer-events: none;
+      transition: 0.2s;
+    }
+
+    .input-floating input:focus + label,
+    .input-floating input:not(:placeholder-shown) + label {
+      top: 5px;
+      font-size: 0.72rem;
+      color: #67e8f9;
+    }
+
+    .input-search {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: min(100%, 300px);
+      padding: 12px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: #0f172a;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+    }
+
+    .input-search input {
+      flex: 1;
+      min-width: 0;
+      color: white;
+      background: transparent;
+      border: 0;
+      outline: none;
+    }
+
+    .input-underline {
+      width: min(100%, 280px);
+      padding: 12px 2px;
+      color: white;
+      border: 0;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+      background: transparent;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    .input-underline:focus {
+      border-bottom-color: var(--accent-2);
+      box-shadow: 0 8px 18px -16px var(--accent-2);
+    }
+
+    .textarea-soft {
+      width: min(100%, 300px);
+      min-height: 110px;
+      resize: vertical;
+      padding: 14px;
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.07);
+      outline: none;
+    }
+
+    .textarea-soft:focus {
+      border-color: rgba(139, 92, 246, 0.75);
+      box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.16);
+    }
+
+    .select-fake {
+      width: min(100%, 260px);
+      padding: 14px 16px;
+      border-radius: 14px;
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: #111827;
+      outline: none;
+    }
+
+    /* Cards */
+    .profile-card {
+      width: 240px;
+      padding: 22px;
+      border-radius: 26px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.05));
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      text-align: center;
+      backdrop-filter: blur(16px);
+      transition: 0.25s;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255, 255, 255, 0.34);
+    }
+
+    .avatar {
+      width: 82px;
+      height: 82px;
+      margin: 0 auto 16px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, #8b5cf6, #06b6d4, #f97316);
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      box-shadow: 0 16px 36px rgba(139, 92, 246, 0.25);
+    }
+
+    .profile-card h3,
+    .product-card h3,
+    .stats-card h3 {
+      margin-bottom: 6px;
+    }
+
+    .profile-card p,
+    .product-card p,
+    .stats-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .product-card {
+      width: 250px;
+      overflow: hidden;
+      border-radius: 26px;
+      background: #f8fafc;
+      color: #0f172a;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+    }
+
+    .product-image {
+      height: 140px;
+      background:
+        radial-gradient(circle at 30% 30%, #fff, transparent 25%),
+        linear-gradient(135deg, #67e8f9, #8b5cf6);
+      display: grid;
+      place-items: center;
+      font-size: 3rem;
+    }
+
+    .product-body {
+      padding: 18px;
+    }
+
+    .price-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 16px;
+    }
+
+    .mini-buy {
+      padding: 9px 12px;
+      border-radius: 12px;
+      color: white;
+      background: #111827;
+    }
+
+    .stats-card {
+      width: 250px;
+      padding: 22px;
+      border-radius: 26px;
+      background: linear-gradient(145deg, #111827, #020617);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .stat-number {
+      margin: 12px 0 6px;
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: -0.06em;
+    }
+
+    .bar {
+      height: 9px;
+      margin-top: 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      overflow: hidden;
+    }
+
+    .bar span {
+      display: block;
+      width: 74%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    }
+
+    .tilt-card {
+      width: 240px;
+      min-height: 170px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 22px;
+      border-radius: 26px;
+      background: linear-gradient(135deg, #fb7185, #f97316);
+      color: white;
+      font-weight: 900;
+      font-size: 1.45rem;
+      transform: perspective(700px) rotateX(8deg) rotateY(-10deg);
+      box-shadow: 18px 24px 50px rgba(0, 0, 0, 0.35);
+      transition: 0.25s;
+    }
+
+    .tilt-card:hover {
+      transform: perspective(700px) rotateX(0) rotateY(0) translateY(-8px);
+    }
+
+    /* Toggles e checks */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 76px;
+      height: 40px;
+    }
+
+    .switch input,
+    .check-card input,
+    .radio-card input {
+      display: none;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      inset: 0;
+      border-radius: 999px;
+      background: #374151;
+      transition: 0.25s;
+    }
+
+    .slider::before {
+      content: "";
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      left: 4px;
+      top: 4px;
+      border-radius: 50%;
+      background: white;
+      transition: 0.25s;
+    }
+
+    .switch input:checked + .slider {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    }
+
+    .switch input:checked + .slider::before {
+      transform: translateX(36px);
+    }
+
+    .check-card,
+    .radio-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.06);
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .fake-check,
+    .fake-radio {
+      width: 24px;
+      height: 24px;
+      display: grid;
+      place-items: center;
+      border: 2px solid rgba(255, 255, 255, 0.35);
+      transition: 0.2s;
+    }
+
+    .fake-check {
+      border-radius: 7px;
+    }
+
+    .fake-radio {
+      border-radius: 50%;
+    }
+
+    .fake-check::after {
+      content: "✓";
+      opacity: 0;
+      transform: scale(0.4);
+      transition: 0.2s;
+    }
+
+    .fake-radio::after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: white;
+      opacity: 0;
+      transform: scale(0.4);
+      transition: 0.2s;
+    }
+
+    .check-card input:checked + .fake-check,
+    .radio-card input:checked + .fake-radio {
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    }
+
+    .check-card input:checked + .fake-check::after,
+    .radio-card input:checked + .fake-radio::after {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .segmented {
+      display: inline-grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 5px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .segmented button {
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: var(--muted);
+      background: transparent;
+    }
+
+    .segmented button.active {
+      color: white;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    }
+
+    /* Loaders */
+    .loader-ring {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      border: 6px solid rgba(255, 255, 255, 0.16);
+      border-top-color: #67e8f9;
+      animation: spin 0.9s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .loader-dots {
+      display: flex;
+      gap: 10px;
+    }
+
+    .loader-dots span {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #c4b5fd;
+      animation: bounceDot 0.7s infinite alternate;
+    }
+
+    .loader-dots span:nth-child(2) { animation-delay: 0.14s; }
+    .loader-dots span:nth-child(3) { animation-delay: 0.28s; }
+
+    @keyframes bounceDot {
+      to { transform: translateY(-16px); opacity: 0.55; }
+    }
+
+    .loader-bars {
+      display: flex;
+      align-items: end;
+      gap: 7px;
+      height: 58px;
+    }
+
+    .loader-bars span {
+      width: 10px;
+      height: 20px;
+      border-radius: 999px;
+      background: linear-gradient(#f97316, #fb7185);
+      animation: growBar 0.7s infinite alternate;
+    }
+
+    .loader-bars span:nth-child(2) { animation-delay: 0.12s; }
+    .loader-bars span:nth-child(3) { animation-delay: 0.24s; }
+    .loader-bars span:nth-child(4) { animation-delay: 0.36s; }
+    .loader-bars span:nth-child(5) { animation-delay: 0.48s; }
+
+    @keyframes growBar {
+      to { height: 56px; }
+    }
+
+    .loader-orbit {
+      position: relative;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      animation: spin 1.4s linear infinite;
+    }
+
+    .loader-orbit::before,
+    .loader-orbit::after {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #67e8f9;
+      top: -8px;
+      left: calc(50% - 8px);
+      box-shadow: 0 0 22px #67e8f9;
+    }
+
+    .loader-orbit::after {
+      top: auto;
+      bottom: -8px;
+      background: #c4b5fd;
+      box-shadow: 0 0 22px #c4b5fd;
+    }
+
+    /* Forms */
+    .login-card {
+      width: min(100%, 330px);
+      padding: 24px;
+      border-radius: 26px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.13), rgba(255,255,255,0.05));
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .login-card h3 {
+      margin-bottom: 6px;
+      font-size: 1.4rem;
+    }
+
+    .login-card p {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .form-stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    .form-stack input {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 14px;
+      outline: none;
+      color: white;
+      background: rgba(0,0,0,0.22);
+    }
+
+    .form-stack input:focus {
+      border-color: var(--accent-2);
+    }
+
+    .wide-btn {
+      width: 100%;
+      padding: 13px 16px;
+      margin-top: 4px;
+      border-radius: 14px;
+      color: white;
+      font-weight: 800;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    }
+
+    .newsletter-card {
+      width: min(100%, 410px);
+      padding: 24px;
+      border-radius: 26px;
+      color: #111827;
+      background: #f8fafc;
+    }
+
+    .newsletter-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+
+    .newsletter-card p {
+      color: #475569;
+      line-height: 1.55;
+      margin-bottom: 18px;
+    }
+
+    .newsletter-row {
+      display: flex;
+      gap: 8px;
+    }
+
+    .newsletter-row input {
+      flex: 1;
+      min-width: 0;
+      padding: 12px 14px;
+      border: 1px solid #cbd5e1;
+      border-radius: 14px;
+      outline: none;
+    }
+
+    .newsletter-row button {
+      padding: 12px 14px;
+      color: white;
+      border-radius: 14px;
+      background: #111827;
+    }
+
+    /* Tooltips */
+    .tooltip-wrap {
+      position: relative;
+      display: inline-block;
+    }
+
+    .tooltip-wrap .tooltip-text {
+      position: absolute;
+      left: 50%;
+      bottom: calc(100% + 12px);
+      transform: translateX(-50%) translateY(8px);
+      width: max-content;
+      max-width: 220px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      color: #111;
+      background: #fff;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.2s;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .tooltip-wrap .tooltip-text::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 7px solid transparent;
+      border-top-color: white;
+    }
+
+    .tooltip-wrap:hover .tooltip-text {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .chip-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .chip {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      transition: 0.2s;
+    }
+
+    .chip:hover {
+      transform: translateY(-3px);
+      background: rgba(255,255,255,0.15);
+    }
+
+    /* Patterns */
+    .pattern-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 18px;
+      width: 100%;
+    }
+
+    .pattern-swatch {
+      height: 150px;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .pattern-swatch span {
+      position: absolute;
+      left: 14px;
+      bottom: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      background: rgba(0,0,0,0.45);
+      backdrop-filter: blur(10px);
+    }
+
+    .pattern-dots {
+      background-color: #111827;
+      background-image: radial-gradient(rgba(255,255,255,0.35) 1px, transparent 1px);
+      background-size: 18px 18px;
+    }
+
+    .pattern-grid-bg {
+      background-color: #0f172a;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    .pattern-gradient {
+      background:
+        radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.9), transparent 30%),
+        radial-gradient(circle at 80% 60%, rgba(6, 182, 212, 0.75), transparent 30%),
+        linear-gradient(135deg, #020617, #111827);
+    }
+
+    .pattern-lines {
+      background:
+        repeating-linear-gradient(135deg, rgba(255,255,255,0.12) 0 2px, transparent 2px 12px),
+        #18181b;
+    }
+
+    /* Accordions / badges */
+    .accordion {
+      width: min(100%, 420px);
+      display: grid;
+      gap: 10px;
+    }
+
+    .accordion details {
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.06);
+      overflow: hidden;
+    }
+
+    .accordion summary {
+      cursor: pointer;
+      padding: 15px 16px;
+      font-weight: 800;
+    }
+
+    .accordion p {
+      padding: 0 16px 16px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .notification {
+      width: min(100%, 360px);
+      display: flex;
+      gap: 14px;
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.28);
+    }
+
+    .notification-icon {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: rgba(34, 197, 94, 0.18);
+    }
+
+    .notification p {
+      color: var(--muted);
+      margin-top: 3px;
+      line-height: 1.45;
+      font-size: 0.9rem;
+    }
+
+    .footer-note {
+      color: var(--muted);
+      margin-top: 36px;
+      line-height: 1.65;
+      text-align: center;
+    }
+
+    .copy-toast {
+      position: fixed;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%) translateY(20px);
+      opacity: 0;
+      pointer-events: none;
+      padding: 12px 16px;
+      border-radius: 999px;
+      color: white;
+      background: rgba(17, 24, 39, 0.9);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 16px 34px rgba(0,0,0,0.3);
+      transition: 0.25s;
+      z-index: 10;
+    }
+
+    .copy-toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    @media (max-width: 720px) {
+      .page-shell {
+        width: min(100% - 20px, 1180px);
+        padding-top: 10px;
+      }
+
+      .hero {
+        border-radius: 26px;
+        padding-block: 40px;
+      }
+
+      .section-header {
+        display: block;
+      }
+
+      .tag {
+        display: inline-block;
+        margin-top: 16px;
+      }
+
+      .component-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .newsletter-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page-shell">
+    <section class="hero" id="topo">
+      <div class="eyebrow"><span class="pulse-dot"></span> HTML + CSS + JS vanilla</div>
+      <h1>Laboratório de componentes <span class="gradient-text">estilo Uiverse</span></h1>
+      <p>
+        Uma página única para demonstrar componentes visuais muito usados em interfaces modernas:
+        botões animados, inputs, cards, toggles, checkboxes, radio buttons, loaders, formulários,
+        tooltips, padrões de fundo e elementos de feedback.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-glow" href="#botoes">Explorar componentes</a>
+        <button class="btn-border-slide" id="copyTipButton">Copiar dica de uso</button>
+      </div>
+    </section>
+
+    <nav class="nav-pills" aria-label="Categorias da página">
+      <a href="#botoes">Botões</a>
+      <a href="#inputs">Inputs</a>
+      <a href="#cards">Cards</a>
+      <a href="#toggles">Toggles</a>
+      <a href="#loaders">Loaders</a>
+      <a href="#forms">Forms</a>
+      <a href="#tooltips">Tooltips</a>
+      <a href="#patterns">Patterns</a>
+      <a href="#extras">Extras</a>
+    </nav>
+
+    <section class="section" id="botoes">
+      <div class="section-header">
+        <div>
+          <h2>Botões</h2>
+          <p>Ótimos para mostrar hover, active, glow, animação líquida, 3D e microinterações.</p>
+        </div>
+        <span class="tag">button effects</span>
+      </div>
+
+      <div class="component-grid">
+        <div class="component-box" data-label="Glow gradient"><button class="btn-glow">Começar agora</button></div>
+        <div class="component-box" data-label="Border slide"><button class="btn-border-slide">Ver detalhes</button></div>
+        <div class="component-box" data-label="3D press"><button class="btn-3d">Apertar</button></div>
+        <div class="component-box" data-label="Neon"><button class="btn-neon">Neon</button></div>
+        <div class="component-box" data-label="Liquid hover"><button class="btn-liquid">Líquido</button></div>
+        <div class="component-box" data-label="Icon button"><button class="btn-icon" aria-label="Favoritar">★</button></div>
+      </div>
+    </section>
+
+    <section class="section" id="inputs">
+      <div class="section-header">
+        <div>
+          <h2>Inputs</h2>
+          <p>Campos com label flutuante, busca, borda inferior, textarea e select estilizado.</p>
+        </div>
+        <span class="tag">forms & inputs</span>
+      </div>
+
+      <div class="component-grid">
+        <div class="component-box" data-label="Floating label">
+          <div class="input-floating">
+            <input id="nome" type="text" placeholder=" " />
+            <label for="nome">Nome do aluno</label>
+          </div>
+        </div>
+        <div class="component-box" data-label="Search">
+          <label class="input-search">
+            <span>⌕</span>
+            <input type="search" placeholder="Buscar componente..." />
+          </label>
+        </div>
+        <div class="component-box" data-label="Underline">
+          <input class="input-underline" type="email" placeholder="email@exemplo.com" />
+        </div>
+        <div class="component-box" data-label="Textarea">
+          <textarea class="textarea-soft" placeholder="Digite uma observação..."></textarea>
+        </div>
+        <div class="component-box" data-label="Select">
+          <select class="select-fake">
+            <option>HTML</option>
+            <option>CSS</option>
+            <option>JavaScript</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cards">
+      <div class="section-header">
+        <div>
+          <h2>Cards</h2>
+          <p>Cards são uma das melhores categorias para estudar sombra, borda, espaçamento, hierarquia e responsividade.</p>
+        </div>
+        <span class="tag">card components</span>
+      </div>
+
+      <div class="component-grid">
+        <div class="component-box" data-label="Profile card">
+          <article class="profile-card">
+            <div class="avatar">🧑‍💻</div>
+            <h3>Ana Dev</h3>
+            <p>Frontend, interfaces mágicas e componentes reutilizáveis.</p>
+          </article>
+        </div>
+
+        <div class="component-box light-stage" data-label="Product card">
+          <article class="product-card">
+            <div class="product-image">🎧</div>
+            <div class="product-body">
+              <h3>Headset CSS</h3>
+              <p>Som espacial para codar com foco.</p>
+              <div class="price-line">
+                <strong>R$ 199</strong>
+                <button class="mini-buy">Comprar</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="component-box" data-label="Stats card">
+          <article class="stats-card">
+            <h3>Progresso</h3>
+            <p>Componentes concluídos</p>
+            <div class="stat-number">74%</div>
+            <div class="bar"><span></span></div>
+          </article>
+        </div>
+
+        <div class="component-box" data-label="Tilt card">
+          <div class="tilt-card">Hover com perspectiva</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="toggles">
+      <div class="section-header">
+        <div>
+          <h2>Toggles, checkboxes e radios</h2>
+          <p>Componentes pequenos, mas ótimos para treinar seletores CSS como input:checked + elemento.</p>
+        </div>
+        <span class="tag">toggle switches</span>
+      </div>
+
+      <div class="component-grid">
+        <div class="component-box" data-label="Toggle">
+          <label class="switch">
+            <input type="checkbox" checked />
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="component-box" data-label="Checkbox">
+          <label class="check-card">
+            <input type="checkbox" checked />
+            <span class="fake-check"></span>
+            <span>Ativar modo bonito</span>
+          </label>
+        </div>
+
+        <div class="component-box" data-label="Radio">
+          <label class="radio-card">
+            <input type="radio" name="nivel" checked />
+            <span class="fake-radio"></span>
+            <span>Nível iniciante</span>
+          </label>
+        </div>
+
+        <div class="component-box" data-label="Segmented control">
+          <div class="segmented" role="group" aria-label="Escolha de visualização">
+            <button>Dia</button>
+            <button class="active">Semana</button>
+            <button>Mês</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="loaders">
+      <div class="section-header">
+        <div>
+          <h2>Loaders</h2>
+          <p>Loaders ajudam a demonstrar keyframes, delays, transformações e animações infinitas.</p>
+        </div>
+        <span class="tag">loading UI</span>
+      </div>
+
+      <div class="component-grid">
+        <div class="component-box" data-label="Ring"><div class="loader-ring"></div></div>
+        <div class="component-box" data-label="Dots">
+          <div class="loader-dots"><span></span><span></span><span></span></div>
+        </div>
+        <div class="component-box" data-label="Bars">
+          <div class="loader-bars"><span></span><span></span><span></span><span></span><span></span></div>
+        </div>
+        <div class="component-box" data-label="Orbit"><div class="loader-orbit"></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="forms">
+      <div class="section-header">
+        <div>
+          <h2>Formulários</h2>
+          <p>Exemplos maiores combinando inputs, botões, contraste e agrupamento visual.</p>
+        </div>
+        <span class="tag">forms</span>
+      </div>
+
+      <div class="component-grid">
+        <div class="component-box" data-label="Login form">
+          <form class="login-card">
+            <h3>Entrar</h3>
+            <p>Acesse o painel de componentes.</p>
+            <div class="form-stack">
+              <input type="email" placeholder="E-mail" />
+              <input type="password" placeholder="Senha" />
+              <button class="wide-btn" type="button">Login</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="component-box light-stage" data-label="Newsletter form">
+          <form class="newsletter-card">
+            <h3>Receba novidades</h3>
+            <p>Cadastre-se para receber novos componentes, ideias de aula e desafios.</p>
+            <div class="newsletter-row">
+              <input type="email" placeholder="seu@email.com" />
+              <button type="button">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tooltips">
+      <div class="section-header">
+        <div>
+          <h2>Tooltips e chips</h2>
+          <p>Pequenos elementos de apoio para explicar ações sem ocupar espaço demais na tela.</p>
+        </div>
+        <span class="tag">tooltips</span>
+      </div>
+
+      <div class="component-grid">
+        <div class="component-box" data-label="Tooltip">
+          <div class="tooltip-wrap">
+            <button class="btn-glow">Passe o mouse</button>
+            <span class="tooltip-text">Esse botão usa tooltip apenas com CSS.</span>
+          </div>
+        </div>
+
+        <div class="component-box" data-label="Chips">
+          <div class="chip-row">
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">JS</span>
+            <span class="chip">UI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="patterns">
+      <div class="section-header">
+        <div>
+          <h2>Patterns e fundos</h2>
+          <p>Fundos decorativos ajudam a dar personalidade sem precisar de imagens externas.</p>
+        </div>
+        <span class="tag">background patterns</span>
+      </div>
+
+      <div class="component-box" data-label="Pattern gallery">
+        <div class="pattern-grid">
+          <div class="pattern-swatch pattern-dots"><span>dots</span></div>
+          <div class="pattern-swatch pattern-grid-bg"><span>grid</span></div>
+          <div class="pattern-swatch pattern-gradient"><span>gradient</span></div>
+          <div class="pattern-swatch pattern-lines"><span>lines</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="extras">
+      <div class="section-header">
+        <div>
+          <h2>Extras úteis</h2>
+          <p>Componentes simples para completar interfaces: acordeão, notificação e feedback de ação.</p>
+        </div>
+        <span class="tag">micro UI</span>
+      </div>
+
+      <div class="component-grid">
+        <div class="component-box" data-label="Accordion">
+          <div class="accordion">
+            <details open>
+              <summary>Quando usar arquivo único?</summary>
+              <p>Use em demonstrações, aulas, protótipos rápidos e exercícios pequenos.</p>
+            </details>
+            <details>
+              <summary>Quando separar CSS?</summary>
+              <p>Separe quando o projeto crescer, quando houver muitos componentes ou quando vários alunos forem mexer no código.</p>
+            </details>
+          </div>
+        </div>
+
+        <div class="component-box" data-label="Notification">
+          <div class="notification">
+            <div class="notification-icon">✓</div>
+            <div>
+              <strong>Componente salvo</strong>
+              <p>Essa mensagem pode aparecer depois de uma ação do usuário.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <p class="footer-note">
+      Esta página é uma demo didática inspirada em estilos comuns encontrados em bibliotecas de componentes visuais.
+      Para usar componentes reais do Uiverse, confira a licença do componente escolhido e copie o HTML/CSS original indicado pelo autor.
+    </p>
+  </main>
+
+  <div class="copy-toast" id="toast">Dica copiada!</div>
+
+  <script>
+    const copyTipButton = document.querySelector('#copyTipButton');
+    const toast = document.querySelector('#toast');
+
+    copyTipButton.addEventListener('click', async () => {
+      const texto = 'Para estudar componentes visuais, comece com arquivo único. Para projeto real, separe CSS por categoria ou por componente.';
+
+      try {
+        await navigator.clipboard.writeText(texto);
+      } catch (erro) {
+        console.log('Não foi possível copiar automaticamente:', erro);
+      }
+
+      toast.classList.add('show');
+
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 1800);
+    });
+
+    const segmentedButtons = document.querySelectorAll('.segmented button');
+
+    segmentedButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        segmentedButtons.forEach((item) => item.classList.remove('active'));
+        button.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
