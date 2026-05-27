@@ -1,0 +1,11 @@
+body {
+  /* background: #833ab4;
+  background: linear-gradient(170deg,rgba(131, 58, 180, 1) 0%,rgba(253, 29, 29, 1) 50%,rgba(252, 176, 69, 1) 100%); */
+
+    /* background: #FD1D1D;
+    background: linear-gradient(134deg, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%); */
+
+background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+
+    min-height: 100vh;
+}

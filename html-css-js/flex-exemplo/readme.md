@@ -4,3 +4,4 @@ Esse código foi gerado para apoiar o tutorial [no notion](https://www.notion.so
 
 Aqui na raíz tu vai encontrar um exemplo sem dados.
 Dentro daquela pastinha ali em cima tu vai achar uma página fictícia desenvolvida sobre esse modelo.
+
