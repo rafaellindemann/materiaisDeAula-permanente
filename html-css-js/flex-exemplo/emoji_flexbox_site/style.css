@@ -1,0 +1,248 @@
+/* ---------------------- */
+/* style.css */
+/* ---------------------- */
+
+
+/* <RESET CSS BÁSICO> */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    min-height: 100vh;
+}
+/* </RESET CSS BÁSICO> */
+
+:root {
+  color-scheme: dark;
+  --bg1: #ff00ff;
+  --bg2: #00ffff;
+  --bg3: #ffff00;
+  --bg4: #00ff00;
+  --bg5: #ff0000;
+  --bg6: #0000ff;
+
+}
+
+body{
+    background-color: var(--bg1);
+}
+
+#flex-principal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    min-height: 100vh;
+    
+    background-color: var(--bg2);
+}
+
+.colunas{
+    /* width: 50%; */
+    height: 100vh;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#direita{
+    flex-direction: column;
+    background-color: var(--bg3);
+
+    flex: 4;
+}
+#esquerda{
+    background-color: var(--bg4);
+
+    flex: 1;
+}
+
+.linhas{
+    width: 100%;
+    /* height: 50%; */
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#direita-cima{
+    background-color: var(--bg5);
+}
+#direita-baixo{
+    background-color: var(--bg6);
+}
+
+/* ---------------------- */
+/* CONTEXTO: LOJA DE EMOJIS */
+/* Acrescentado ao final para não apagar a estrutura original do flexbox */
+/* ---------------------- */
+
+:root{
+    --loja-fundo: #171022;
+    --loja-card: rgba(255, 255, 255, 0.14);
+    --loja-card-claro: rgba(255, 255, 255, 0.22);
+    --loja-texto: #ffffff;
+    --loja-texto-suave: #f3defc;
+    --loja-destaque: #ffd447;
+    --loja-roxo: #7b2cff;
+    --loja-pink: #ff4fd8;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--loja-texto);
+}
+
+#flex-principal{
+    background:
+        radial-gradient(circle at top left, rgba(255, 79, 216, 0.45), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(255, 212, 71, 0.35), transparent 35%),
+        linear-gradient(135deg, #221138, #120b1f);
+}
+
+#esquerda{
+    background: linear-gradient(160deg, var(--loja-roxo), #2d124d);
+    padding: 48px;
+}
+
+#direita{
+    background: transparent;
+}
+
+#direita-cima{
+    background: linear-gradient(135deg, rgba(255, 79, 216, 0.35), rgba(255, 212, 71, 0.22));
+    padding: 40px;
+}
+
+#direita-baixo{
+    background: linear-gradient(135deg, rgba(123, 44, 255, 0.25), rgba(0, 0, 0, 0.18));
+    padding: 40px;
+}
+
+.conteudo-esquerda{
+    max-width: 420px;
+}
+
+.tag{
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background-color: var(--loja-destaque);
+    color: #1c1028;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h1{
+    margin-bottom: 20px;
+    font-size: clamp(2.3rem, 5vw, 4.8rem);
+    line-height: 0.95;
+}
+
+h2{
+    margin-bottom: 10px;
+    font-size: clamp(1.8rem, 3vw, 3rem);
+}
+
+h3{
+    margin-bottom: 8px;
+    font-size: 1.25rem;
+}
+
+p{
+    color: var(--loja-texto-suave);
+    line-height: 1.6;
+}
+
+.botao{
+    display: inline-block;
+    margin-top: 28px;
+    padding: 14px 22px;
+    border-radius: 999px;
+    background-color: var(--loja-destaque);
+    color: #1c1028;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+}
+
+.card-destaque{
+    width: min(760px, 100%);
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 32px;
+    background-color: var(--loja-card);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+}
+
+.emoji-grande{
+    font-size: clamp(5rem, 10vw, 9rem);
+    filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.25));
+}
+
+.card-destaque strong{
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 2rem;
+    color: var(--loja-destaque);
+}
+
+.lista-produtos{
+    width: min(900px, 100%);
+    display: flex;
+    gap: 20px;
+}
+
+.lista-produtos article{
+    flex: 1;
+    min-height: 190px;
+    padding: 28px;
+    border-radius: 28px;
+    background-color: var(--loja-card-claro);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.2);
+}
+
+.lista-produtos span{
+    display: block;
+    margin-bottom: 18px;
+    font-size: 3.2rem;
+}
+
+@media (max-width: 800px){
+    #flex-principal{
+        flex-direction: column;
+    }
+
+    #esquerda,
+    #direita{
+        width: 100%;
+        min-height: auto;
+        height: auto;
+    }
+
+    #esquerda{
+        padding: 40px 24px;
+    }
+
+    #direita-cima,
+    #direita-baixo{
+        padding: 24px;
+    }
+
+    .card-destaque,
+    .lista-produtos{
+        flex-direction: column;
+    }
+}
