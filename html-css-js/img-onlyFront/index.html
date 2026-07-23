@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Simulação de Upload</title>
+
+    <style>
+        img{
+            width:200px;
+            border:1px solid #ccc;
+            margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Imagem do Produto</h2>
+
+    <input
+        type="file"
+        id="inputImagem"
+        accept="image/*"
+        onchange="selecionarImagem()"
+    >
+
+    <p id="nomeImagem">
+        Nenhuma imagem selecionada.
+    </p>
+
+    <img
+        id="previewImagem"
+        hidden
+    >
+
+    <br><br>
+
+    <button onclick="salvarImagem()">
+        Salvar
+    </button>
+
+    <button onclick="carregarImagemSalva()">
+        Carregar do localStorage
+    </button>
+
+    <script>
+
+        function selecionarImagem(){
+
+            const arquivo = document.getElementById("inputImagem").files[0];
+
+            if(!arquivo) return;
+
+            document.getElementById("nomeImagem").innerText = arquivo.name;
+
+            document.getElementById("previewImagem").src = arquivo.name;
+            document.getElementById("previewImagem").hidden = false;
+        }
+
+        function salvarImagem(){
+
+            const nome = document.getElementById("nomeImagem").innerText;
+
+            localStorage.setItem("imagemProduto", nome);
+
+            alert("Nome salvo!");
+        }
+
+        function carregarImagemSalva(){
+
+            const nome = localStorage.getItem("imagemProduto");
+
+            if(!nome){
+                alert("Nenhuma imagem salva.");
+                return;
+            }
+
+            document.getElementById("nomeImagem").innerText = nome;
+
+            document.getElementById("previewImagem").src = nome;
+            document.getElementById("previewImagem").hidden = false;
+
+        }
+
+    </script>
+
+</body>
+</html>
